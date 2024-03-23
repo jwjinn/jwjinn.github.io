@@ -18,7 +18,7 @@ timezone: Asia/Seoul
 
 title: 엔지니어 주우진 # the main title
 
-tagline: 매우 쉽게 이해할 수 있는 내용과 기록을 하자!! # it will display as the sub-title
+tagline: 무조건 읽기 쉽게!! # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
   A minimal, responsive and feature-rich Jekyll theme for technical writing.
