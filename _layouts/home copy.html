@@ -2,6 +2,7 @@
 layout: default
 refactor: true
 ---
+
 {% include lang.html %}
 
 {% assign pinned = site.posts | where: 'pin', 'true' %}
@@ -109,8 +110,6 @@ refactor: true
 </div>
 <!-- #post-list -->
 
-{% comment %}
-  {% if paginator.total_pages > 1 %}
-    {% include post-paginator.html %}
-  {% endif %}
-{% endcomment %}
+{% if paginator.total_pages > 1 %}
+  {% include post-paginator.html %}
+{% endif %}
