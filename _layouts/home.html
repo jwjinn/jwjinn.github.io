@@ -11,8 +11,6 @@ refactor: true
 
 <h1>엔지니어 우진의 일기</h1>
 
-<h1>엔지니어 우진의 일기</h1>
-
 <div class="container">
   <!-- Add your site or application content here -->
   <p>기존에는 velog, notion 등등 많은 곳에 나눠지면서 기록을 해왔습니다.</p>
@@ -25,40 +23,40 @@ refactor: true
 
   <h2>다시 설정해보는 2024년의 목표들</h2>
 
-  <label for="people">좋은 인연이 왔을 때는 도망가지 말자</label>
-  <progress id="people" value="0" max="10"></progress>
-
-  <br>
-
-  <label for="kafka">kafka(책 진행도를 기준으로)</label>
-  <progress id="kafka" value="48" max="477"></progress>
-
-  <br>
-
-  <label for="kafka">elasticsearch(책 진행도를 기준으로)</label>
-  <progress id="kafka" value="48" max="100"></progress>
-
-  <br>
-
-  <label for="book">1년에 24권을 읽기</label>
-  <progress id="book" value="3" max="24"></progress>
-
-  <br>
-
-  <label for="book">요리를 공부해보자</label>
-  <progress id="kafka" value="0" max="100"></progress>
-
-  <br>
-
-  <label for="sqlp">sqlp 자격증을 공부해서 연말에 도전하자.</label>
-  <progress id="sqlp" value="0" max="100"></progress>
-
-  <br>
-
-  <label for="english">영어 회화책 2권 읽자</label>
-  <progress id="english" value="0" max="100"></progress>
-
-  <!-- ... other contents ... -->
+  <table style="width: 100%; padding: 0 50px;">
+    <tr>
+      <td>목표</td>
+      <td>진행 상황</td>
+    </tr>
+    <tr>
+      <td>좋은 인연이 왔을 때는 도망가지 말자</td>
+      <td><progress value="0" max="10"></progress></td>
+    </tr>
+    <tr>
+      <td>kafka(책 진행도를 기준으로)</td>
+      <td><progress value="48" max="477"></progress></td>
+    </tr>
+    <tr>
+      <td>elasticsearch(책 진행도를 기준으로)</td>
+      <td><progress value="48" max="100"></progress></td>
+    </tr>
+    <tr>
+      <td>1년에 24권을 읽기</td>
+      <td><progress value="3" max="24"></progress></td>
+    </tr>
+    <tr>
+      <td>요리를 공부해보자</td>
+      <td><progress value="0" max="100"></progress></td>
+    </tr>
+    <tr>
+      <td>sqlp 자격증을 공부해서 연말에 도전하자.</td>
+      <td><progress value="0" max="100"></progress></td>
+    </tr>
+    <tr>
+      <td>영어 회화책 2권 읽자</td>
+      <td><progress value="0" max="100"></progress></td>
+    </tr>
+  </table>
 </div>
 
 {% if paginator.total_pages > 1 %}
