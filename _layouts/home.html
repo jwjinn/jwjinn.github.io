@@ -9,7 +9,27 @@ refactor: true
 
 {% assign posts = '' | split: '' %}
 
-<h1>markup test</h1>
+<header>
+  <div class="container">
+    <div id="branding">
+      <h1>나의 포트폴리오</h1>
+    </div>
+    <nav>
+      <ul>
+        <li class="current"><a href="index.html">홈</a></li>
+        <li><a href="about.html">소개</a></li>
+        <li><a href="contact.html">연락처</a></li>
+      </ul>
+    </nav>
+  </div>
+  t
+</header>
+
+<div class="container">
+  <!-- Add your site or application content here -->
+  <p>이곳에 본인의 포트폴리오를 소개하는 내용을 넣으세요.</p>
+  <!-- ... other contents ... -->
+</div>
 
 {% if paginator.total_pages > 1 %}
   {% include post-paginator.html %}
