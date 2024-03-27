@@ -10,5 +10,3 @@ math: true
 mermaid: true
 
 ---
-
-testtesttest
