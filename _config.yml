@@ -16,7 +16,7 @@ timezone: Asia/Seoul
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: 엔지니어의 일기, 기록장 # the main title
+title: 엔지니어 기록장 # the main title
 
 tagline: 무조건 읽기 쉽게!! # it will display as the sub-title
 
