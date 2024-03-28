@@ -162,6 +162,13 @@ $$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
   cherry :active, c, after b a, 1d
 ```
 
+```mermaid
+
+flowchart LR
+    id[구매]
+
+```
+
 ## Images
 
 ### Default (with caption)
