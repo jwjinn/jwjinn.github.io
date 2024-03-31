@@ -24,7 +24,7 @@ https://jekyllcodex.org/without-plugin/sitemap/
 ## sitemap.xml 파일 생성 후 붙여넣기
 >  ✓ 루트 경로 확인
 
-![](2024-03-31-12-38-20.png)
+![](https://jwjinn.github.io/assets/img/gitblog/2024-03-31-12-38-20.png)
 
 ### xml 내용
 
@@ -81,14 +81,25 @@ layout: null
 2. 깃 블로그 사이트 경로를 통해서 확인한다.
 `https://jwjinn.github.io/sitemap.xml`
 
-![](2024-03-31-12-49-56.png)
+![](https://jwjinn.github.io/assets/img/gitblog/2024-03-31-12-49-56.png)
 
 ## 문제 발생
->해당 xml파일은 다 정상적으로 동작했지만 한국어로 쓴 markdown 파일 명으로 인해 제대로 링크가 되지 않는다.
-
-**한국어 -> 영어로 이름 변경**
-![](2024-03-31-12-51-57.png)
+>해당 xml파일은 다 정상적으로 동작했지만 **한국어**로 쓴 markdown 파일 명으로 인해 제대로 링크가 되지 않는다.
 
 ### 자체 규칙 생성
 날짜-카테고리-서브카테고리-해당포스팅수
 
+### 변경 전
+![](https://jwjinn.github.io/assets/img/gitblog/2024-03-31-12-51-57.png)
+
+### 변경 후
+![](https://jwjinn.github.io/assets/img/gitblog/2024-03-31-12-56-44.png)
+
+## xml 파일 재 확인
+![](https://jwjinn.github.io/assets/img/gitblog/2024-03-31-13-00-31.png)
+
+> 중요한 것은 구글 크롤러가 제대로 내 포스팅들을 확인할 수 있는 지다.
+따라서, loc값을 복사해서 웹에서 제대로 링크가 가는 지를 확인하자.
+
+## 구글 서치 콘솔에 등록
+![](https://jwjinn.github.io/assets/img/gitblog/2024-03-31-13-03-20.png)
