@@ -1,6 +1,6 @@
 ---
-title: 이미지 애니메이션 효과 제거
-description: 모든 이미지에 있는 애니메이션 효과를 제거하겠습니다.
+title: 웹 크롤러를 위한 xml 추가
+description: 웹 크롤러를 위한 xml을 추가하겠습니다.
 author: 우진
 date: 24-03-31
 categories: [Gitblog, customize]
@@ -25,35 +25,6 @@ https://jekyllcodex.org/without-plugin/sitemap/
 >  ✓ 루트 경로 확인
 
 ![](https://jwjinn.github.io/assets/img/gitblog/2024-03-31-12-38-20.png)
-
-### xml 내용
-
-```xml
-
----
-layout: null
----
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  {% for page in site.pages %}
-  {% if page.url contains '.xml' %}{% else %}
-      <url>
-        <loc>{{ site.url }}{{ page.url }}</loc>
-        <changefreq>monthly</changefreq>
-        <priority>1.0</priority>
-       </url>
-  {% endif %}
-  {% endfor %}
-  {% for page in site.posts %}
-      <url>
-        <loc>{{ site.url }}{{ page.url | replace: 'index.html', '' }}</loc>
-        <changefreq>monthly</changefreq>
-        <priority>1.0</priority>
-       </url>
-  {% endfor %}
-</urlset>
-
-```
 
 ## head에 적용
 경로: `_includes/head.html`
