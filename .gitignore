@@ -19,3 +19,6 @@ package-lock.json
 
 # Misc
 # assets/js/dist
+
+# default post
+_posts/post_templete/
