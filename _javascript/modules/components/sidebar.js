@@ -48,8 +48,9 @@ $(function () {
   })();
 
   // $('#sidebar-trigger').click(sidebarUtil.toggle);
-
+  // $("#sidebar-trigger").click(function(){console.log("hello")})
   $('#sidebar-trigger').click(function () {
+    console.log('hello');
     sidebarUtil.toggle();
   });
 

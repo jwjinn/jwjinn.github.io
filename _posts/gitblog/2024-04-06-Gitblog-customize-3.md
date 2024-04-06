@@ -32,3 +32,26 @@ mermaid: true
 1. 리스너의 문제
 2. 설정의 문제 - 아마 css 건들면서 건들여 졌을 수도.
 
+
+## javascript 위치
+
+`_javascript/modules/components/sidebar.js`
+
+
+## 코드 동작 확인
+```javascript
+
+$("#sidebar-trigger").click(function(){console.log("hello")})
+```
+![](2024-04-06-18-20-29.png)
+
+> 제대로 동작함.
+
+## 우선, 헬로 콘솔을 붙여넣었다.
+```javascript
+
+  $('#sidebar-trigger').click(function () {
+    console.log('hello');
+    sidebarUtil.toggle();
+  });
+```
