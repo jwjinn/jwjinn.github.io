@@ -1,6 +1,6 @@
 ---
 title: 신경 끄기 연습
-description: 노션에 적었었던 독서 리스트를 다시 시작하고자 합니다.
+description: 신경 끄기 연습을 읽고서
 author: joo
 date: 24-03-31
 categories: [Book,self-improvement]
