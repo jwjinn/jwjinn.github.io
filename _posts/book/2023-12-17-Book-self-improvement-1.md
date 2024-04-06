@@ -1,5 +1,5 @@
 ---
-title: 독서리스트
+title: 신경 끄기 연습
 description: 노션에 적었었던 독서 리스트를 다시 시작하고자 합니다.
 author: joo
 date: 24-03-31

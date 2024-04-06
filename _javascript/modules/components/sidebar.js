@@ -1,25 +1,53 @@
+// /**
+//  * Expand or close the sidebar in mobile screens.
+//  */
+
+// const $body = $('body');
+// const ATTR_DISPLAY = 'sidebar-display';
+
+// class SidebarUtil {
+//   static isExpanded = false;
+
+//   static toggle() {
+//     if (SidebarUtil.isExpanded === false) {
+//       $body.attr(ATTR_DISPLAY, '');
+//     } else {
+//       $body.removeAttr(ATTR_DISPLAY);
+//     }
+
+//     SidebarUtil.isExpanded = !SidebarUtil.isExpanded;
+//   }
+// }
+
+// export function sidebarExpand() {
+//   $('#sidebar-trigger').on('click', SidebarUtil.toggle);
+//   $('#mask').on('click', SidebarUtil.toggle);
+// }
+
 /**
  * Expand or close the sidebar in mobile screens.
  */
 
-const $body = $('body');
-const ATTR_DISPLAY = 'sidebar-display';
+$(function () {
+  const sidebarUtil = (function () {
+    const ATTR_DISPLAY = 'sidebar-display';
+    let isExpanded = false;
+    const body = $('body');
 
-class SidebarUtil {
-  static isExpanded = false;
+    return {
+      toggle() {
+        if (isExpanded === false) {
+          body.attr(ATTR_DISPLAY, '');
+        } else {
+          body.removeAttr(ATTR_DISPLAY);
+        }
 
-  static toggle() {
-    if (SidebarUtil.isExpanded === false) {
-      $body.attr(ATTR_DISPLAY, '');
-    } else {
-      $body.removeAttr(ATTR_DISPLAY);
-    }
+        isExpanded = !isExpanded;
+      }
+    };
+  })();
 
-    SidebarUtil.isExpanded = !SidebarUtil.isExpanded;
-  }
-}
+  $('#sidebar-trigger').click(sidebarUtil.toggle);
 
-export function sidebarExpand() {
-  $('#sidebar-trigger').on('click', SidebarUtil.toggle);
-  $('#mask').on('click', SidebarUtil.toggle);
-}
+  $('#mask').click(sidebarUtil.toggle);
+});
