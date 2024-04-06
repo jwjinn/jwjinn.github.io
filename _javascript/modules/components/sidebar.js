@@ -47,7 +47,11 @@ $(function () {
     };
   })();
 
-  $('#sidebar-trigger').click(sidebarUtil.toggle);
+  // $('#sidebar-trigger').click(sidebarUtil.toggle);
+
+  $('#sidebar-trigger').click(function () {
+    sidebarUtil.toggle();
+  });
 
   $('#mask').click(sidebarUtil.toggle);
 });
