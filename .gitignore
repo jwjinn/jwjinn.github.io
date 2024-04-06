@@ -22,3 +22,5 @@ package-lock.json
 
 # default post
 _posts/post_templete/
+
+post_templete/
