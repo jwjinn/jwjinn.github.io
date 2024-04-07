@@ -44,9 +44,9 @@ producer --> 브로커
 ![](https://jwjinn.github.io/assets/img/kafka/2024-04-07-08-59-12.png)
 latest stable release 버전인 3.8.4를 선택했습니다.
 
-> Apache Zookeeper 3.8.4(asc, sha512): 즉시 실행할 수 있는 바이너리 배포본.
->Apache Zookeeper 3.8.4 Source Release: 소스 코드 수정 -> 컴파일 -> Zookeeper 실행
-{: .prompt-tip }
+> Apache Zookeeper 3.8.4(asc, sha512): 즉시 실행할 수 있는 바이너리 배포본.{: .prompt-tip }
+
+>Apache Zookeeper 3.8.4 Source Release: 소스 코드 수정 -> 컴파일 -> Zookeeper 실행{: .prompt-tip }
 
 ### 설치 위치
 ![](https://jwjinn.github.io/assets/img/kafka/2024-04-07-15-18-35.png)
@@ -68,9 +68,9 @@ clientPort=17630
 ```
 > 회사 서버에서 저에게 할당된 포트가 따로 있습니다. 해당 포트(17630)로 바꾸고 진행을 했습니다.
 
-> ticktTime = 2000이란?:
-2초 동안 zookeeper는 **하트 비트 신호**를 보냅니다.
-Heartbeat는 노드가 여전히 살아있고 정상적으로 동작 중이라는 것을 알리는 신호입니다.
+> ticktTime = 2000이란?:<br>
+2초 동안 zookeeper는 **하트 비트 신호**를 보냅니다.<br>
+Heartbeat는 노드가 여전히 살아있고 정상적으로 동작 중이라는 것을 알리는 신호입니다.<br>
 ticktime은 zookeeper가 heatbeat 신호를 받기 위해 기다리는 최대 시간입니다.
 {: .prompt-tip }
 
@@ -186,6 +186,7 @@ http://www.liferaysavvy.com/2021/07/setup-zookeeper-cluster.html
 ![](https://jwjinn.github.io/assets/img/kafka/2024-04-07-16-29-03.png)
 >`server.{X}={hostname}:{peerPort}:{leaderPort}`
 
+***
 Zookeeper는 주키퍼 Server간 클러스터를 기능을 제공합니다.
 
 그리고 주키퍼는 `zookeeper들을 관리하기 위한 AdminServer Port`, `Leader 선출을 위한 포트`, `Server 간 데이터 이동을 위한 포트`, `Server와 Client간 데이터 이동 포트`가 있습니다.
