@@ -28,12 +28,14 @@ https://kafka.apache.org/downloads
 현재 로그인한 계정의 환경 변수가 있는 곳인 .bash_profile에서 `JAVA_HOME` 변수를 읽으면서 필요한 JDK를 이용하게 됩니다.
 
 ### 압축해제 경로와 로그 수집용 폴더 경로.
-
-압축 해제 경로: `/home/jwjin/kafka/local`{: .filepath}.
 ![](https://jwjinn.github.io/assets/img/kafka/2024-04-12-14-28-37.png)
 
-로그 수집용 경로: `/home/jwjin/kafka/tmp`{: .filepath}.
+압축 해제 경로: `/home/jwjin/kafka/local`{: .filepath}.
+
+
 ![](https://jwjinn.github.io/assets/img/kafka/2024-04-12-15-24-23.png)
+
+로그 수집용 경로: `/home/jwjin/kafka/tmp`{: .filepath}.
 
 ### 설정을 하자.
 
