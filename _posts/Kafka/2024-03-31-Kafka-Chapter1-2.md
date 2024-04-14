@@ -1,5 +1,5 @@
 ---
-title: 카프카 입문 
+title: 카프카 입문 - 1:2
 description: 카프카의 큼직, 큼직한 구성
 author: joo
 date: 24-03-31

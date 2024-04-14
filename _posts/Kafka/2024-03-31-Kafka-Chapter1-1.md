@@ -1,5 +1,5 @@
 ---
-title: 카프카의 탄생 배경
+title: 카프카의 탄생 배경 - 1:1
 description: 카프카의 탄생 배경, 발행/구독 시스템의 발전
 author: joo
 date: 24-03-31

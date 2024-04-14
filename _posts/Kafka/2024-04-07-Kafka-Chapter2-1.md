@@ -1,5 +1,5 @@
 ---
-title: 주키퍼 설치와 설정까지 
+title: 주키퍼 설치와 설정까지 - 2:1 
 description: 카프카를 설치하기 위한 zookeeper 설정을 살펴보겠습니다.
 author: joo
 date: 24-04-07
@@ -41,12 +41,13 @@ producer --> 브로커
 ### 주키퍼 다운로드
 <https://zookeeper.apache.org/releases.html>
 
-![](https://jwjinn.github.io/assets/img/kafka/2024-04-07-08-59-12.png)
+![](https://jwjinn.github.io/assets/img/kafka/2024-04-07-08-59-12.png)<Br>
+
 latest stable release 버전인 3.8.4를 선택했습니다.
 
-> Apache Zookeeper 3.8.4(asc, sha512): 즉시 실행할 수 있는 바이너리 배포본.{: .prompt-tip }
+> Apache Zookeeper 3.8.4(asc, sha512): 즉시 실행할 수 있는 바이너리 배포본.
 
->Apache Zookeeper 3.8.4 Source Release: 소스 코드 수정 -> 컴파일 -> Zookeeper 실행{: .prompt-tip }
+>Apache Zookeeper 3.8.4 Source Release: 소스 코드 수정 -> 컴파일 -> Zookeeper 실행
 
 ### 설치 위치
 ![](https://jwjinn.github.io/assets/img/kafka/2024-04-07-15-18-35.png)
