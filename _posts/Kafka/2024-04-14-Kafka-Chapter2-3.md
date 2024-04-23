@@ -1,6 +1,6 @@
 ---
 title: 핵심 브로커 매개변수 - 2:3
-description: 지금까지는 카프카를 설치를 했습니다. 이제는 적절한 설정을 확인해 봅시다.
+description: 핵심 브로커 매개변수를 살펴봅시다.
 author: joo
 date: 24-04-14
 categories: [Kafka, Chapter2]
@@ -16,8 +16,8 @@ mermaid: true
 ## broker.id
 ![](https://jwjinn.github.io/assets/img/kafka/2024-04-16-14-56-48.png)
 
-`카프카 브로커는 정숫값 식별자`를 갖습니다. `broker.id`로 설정 가능한다.
-> 중요한 것은 이 정숫값이 클러스터 안의 각 브로커별로 전부 달라야 한다는 점이다.
+`카프카 브로커는 정숫값 식별자`를 갖습니다. `broker.id`로 설정 가능합니다.
+> 중요한 것은 이 정숫 값이 클러스터 안의 각 브로커별로 전부 달라야 한다는 점입니다.
 각 호스트 별로 고정된 값을 사용하는 것이 강력하게 권장됩니다.(서로 id값이 겹치지 않게)
 
 ## listeners
@@ -26,7 +26,7 @@ mermaid: true
 
 일반적인 보안 프로토콜이 아니라면, `listener.security.protocol.map` 설정을 잡아야 한다.
 
-> 리스너는 {프로토콜}`://{호스트 이름}:{포트}의 형태로 정의됩니다.
+> 리스너는 {프로토콜}://{호스트 이름}:{포트}의 형태로 정의됩니다.
 PLANTEXT://localhost:9092, SSL://9091
 
 1024미만의 포트들은 루트 권한으로 카프카를 생행시켜야 하기에 바람직하지 않습니다.
@@ -75,15 +75,17 @@ producer --> 브로커
 > 각 메시지들은 세그먼트라는 로그 파일의 형태로 브로커의 로컬 디스크에 저장됩니다.
 
 ![](https://jwjinn.github.io/assets/img/kafka/2024-04-17-14-32-03.png)
+> 프로듀서에서 보낸 데이터는 segment 로그 파일로 저장이 되고 Consumer는 해당 로그 파일을 읽습니다.
 
 #### 세그먼트 확인
 ![](https://jwjinn.github.io/assets/img/kafka/2024-04-17-14-35-10.png)
+
 
 ```shell
 ./kafka-topics.sh --bootstrap-server localhost:17631 -create -replication-factor 1 -partitions 1 --topic test
 
 ```
-> 처음에 토픽을 생성할 때 `partitions 1`로 설정을 했기에 `test-0` 하나의 디렉토리만 만들어져 있다.
+> 처음에 토픽을 생성할 때 `partitions 1`로 설정을 했기에 `test-0` 하나의 디렉토리만 만들어져 있습니다.
 
 #### 세그먼트 폴더 확인
 ![](https://jwjinn.github.io/assets/img/kafka/2024-04-17-14-50-04.png)
@@ -95,7 +97,7 @@ producer --> 브로커
 - .timeindex: 메시지들의 타임스탬프를 기록하는 파일
 
 > ![](https://jwjinn.github.io/assets/img/kafka/2024-04-17-14-54-09.png)
-이러한 세그먼트들이 모여있으면서, 메시지의 내용만 저장되는 것이 아니라 메시지의 key, value, offset, message size와 같은 정보가 함께 저장하는 것이 `로그 세그먼트` 입니다.
+이러한 세그먼트들이 모여있으면서, 메시지들의 key, value, offset, message size와 같은 정보가 함께 저장하는 곳이 `로그 세그먼트` 입니다.
 {: .prompt-tip }
 
 
