@@ -104,3 +104,13 @@ public class example {
 }
 ```
 
+```shell
+
+10:44:15.533 [main] INFO org.apache.kafka.clients.producer.KafkaProducer -- [Producer clientId=producer-1] Instantiated an idempotent producer.
+10:44:15.611 [main] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka version: 3.6.1
+10:44:15.612 [main] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka commitId: 5e3c2b738d253ff5
+10:44:15.612 [main] INFO org.apache.kafka.common.utils.AppInfoParser -- Kafka startTimeMs: 1713923055610
+
+```
+> producer에 대한 정보, API에 대한 정보만 콘솔창에 뜨는 것을 확인할 수 있습니다.
+

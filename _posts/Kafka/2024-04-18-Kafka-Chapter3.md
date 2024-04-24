@@ -31,7 +31,7 @@ https://webfirewood.tistory.com/153
 `build.gradle`파일에 `dependencies`에 `implementation 'org.springframework.kafka:spring-kafka'`를 추가합니다.
 
 ### Refresh Gradle project를 하지 않으면 error가 나옵니다.
-![](https://jwjinn.github.io/assets/img/kafka/2024-04-18-15-22-03.png)
+![](https://jwjinn.github.io/assets/img/kafka/2024-04-24-10-47-27.png)
 > 의존성을 추가 했지만, Spring boot에 적용되지 않아 Error가 발생하고 있습니다.
 
 ### Refresh하는 법
@@ -43,7 +43,7 @@ https://webfirewood.tistory.com/153
 > 지금 이 과정은 에러를 찾고 수정하는 과정입니다. 결론을 알고 싶다면 밑으로 내려주세요.
 {: .prompt-danger }
 
-![](https://jwjinn.github.io/assets/img/kafka/2024-04-23-14-53-51.png)
+![](https://jwjinn.github.io/assets/img/kafka/2024-04-24-10-48-01.png)
 
 ```java
 
@@ -107,7 +107,7 @@ java.net.UnknownHostException: nethru.xyz
 > UnknownHost 오류가 발생하고 있습니다. 처음에 드는 생각은 kafka의 `server.propereties`의 설정이 제일 의심됩니다.
 
 #### server.properties 수정
-![](https://jwjinn.github.io/assets/img/kafka/2024-04-18-16-47-38.png)
+![](https://jwjinn.github.io/assets/img/kafka/2024-04-24-10-48-42.png)
 
 #### Kafka가 실행이 안된다.
 
