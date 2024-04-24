@@ -22,7 +22,7 @@ https://webfirewood.tistory.com/153
 
 ### 이클립스 스프링 부트에서 카프카 프로듀서를 생성하기
 
-![](https://jwjinn.github.io/assets/img/kafka/2024-04-18-14-52-39.png)
+![](https://jwjinn.github.io/assets/img/kafka/2024-04-23-17-21-56.png)
 - Type: grade로 Spring boot를 만들었습니다.
 
 ### 의존성 추가
@@ -103,8 +103,8 @@ public class producer2 {
 java.net.UnknownHostException: nethru.xyz
 
 ```
-> Spring Boot에서 실행을 할 때, 위와 같은 에러가 Console 창에서 뜨고 있다. 
-> UnknownHost 오류가 발생하고 있다. 처음에 드는 생각은 kafka의 `server.propereties`의 설정이 제일 의심됩니다.
+> Spring Boot에서 실행을 할 때, 위와 같은 에러가 Console 창에서 뜨고 있습니다. 
+> UnknownHost 오류가 발생하고 있습니다. 처음에 드는 생각은 kafka의 `server.propereties`의 설정이 제일 의심됩니다.
 
 #### server.properties 수정
 ![](https://jwjinn.github.io/assets/img/kafka/2024-04-18-16-47-38.png)
@@ -149,8 +149,8 @@ listener.security.protocol.map=PLAINTEXT:PLAINTEXT,EXTERNAL:PLAINTEXT
 ```
 > 다행이도 카프카는 실행이 됩니다.
 
-> 실행은 되지만, 방법이 틀렸다. 정확한 방법은 `LISTENERS VS ADVERTISED_LISTENERS` 글을 참고해야 한다.
-> 기본적으로 client와 통신이 되지 않는 것은 client에 broker에 대한 메타데이터가 제대로 전달되지 않았기 때문이다. 메타데이터에 대한 설정이 `ADVERTISED_LISTENERS`이다. 
+> 실행은 되지만, 방법이 틀렸습니다. 정확한 방법은 `LISTENERS VS ADVERTISED_LISTENERS` 글을 참고해야 합니다. https://jwjinn.github.io/posts/Kafka-Info-1/
+> 기본적으로 client와 통신이 되지 않는 것은 client에 broker에 대한 메타데이터가 제대로 전달되지 않았기 때문입니다. 메타데이터 제공 위치에 대한 설정이 `ADVERTISED_LISTENERS`입니다. 
 {: .prompt-info }
 
 
@@ -171,7 +171,7 @@ advertised.listeners=PLAINTEXT://{외부IP}:17633
 ^C[2024-04-19 09:29:23,123] INFO Terminating process due to signal SIGINT (org.apache.kafka.common.utils.LoggingSignalHandler)
 
 ```
-> 미친듯이 뜸. `advertised.listeners` 만 쓰는 것은 아닌 듯 하다.
+> 위 로그가 많이 뜹니다. `advertised.listeners` 만 쓰는 것은 아닌 듯 합니다.
 
 #### advertised.listener 수정2
 
@@ -207,7 +207,7 @@ org.apache.kafka.common.errors.In
 > 그러나, 브로커 에러가 발생함. 새로운 브로커가 없다고 한다.
 
 > 해당 오류가 발생했던 이유는 내가 서버의 외부 IP를 잘못 입력했기 때문입니다.
-> 아마 자체적으로 advertised.listeners 값을 검증을 하는 과정을 거치는 듯 합니다. 자체적으로 metaData를 통해서 node를 찾지 못해서 생긴 오류입니다.
+> 아마 자체적으로 advertised.listeners 값을 검증을 하는 과정을 거치는 듯 합니다. 자체적으로 MetaData를 통해서 node를 찾지 못해서 생긴 오류입니다.
 > 해당 오류는 정확한 외부IP 입력을 통해서 해결했습니다.
 {: .prompt-info }
 
@@ -283,7 +283,7 @@ public class producer2 {
 
 ```
 
-#### 확인
+#### 서버에서 컨슈머를 통한 확인
 
 ```shell
 
