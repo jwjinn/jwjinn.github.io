@@ -1,5 +1,5 @@
 ---
-title: 카프카 프로듀서 만들어보기
+title: 다양한 방식의 메시지를 보내는 프로듀서 만들기
 description: 다양한 방식의 메시지를 보내는 프로듀서를 만들어봅시다.
 author: joo
 date: 24-04-17
@@ -357,5 +357,5 @@ public class asyncMessage {
 	}
 
 }
-
 ```
+

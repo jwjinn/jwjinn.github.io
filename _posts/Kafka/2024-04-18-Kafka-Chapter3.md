@@ -1,5 +1,5 @@
 ---
-title: 카프카 프로듀서 만들어보기
+title: Spring boot를 통한 카프카 프로듀서 만들기
 description: Spring boot를 활용해서 카프카의 프로듀서를 만들어보겠습니다.
 author: joo
 date: 24-04-18
