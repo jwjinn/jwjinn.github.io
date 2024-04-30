@@ -142,4 +142,78 @@ flowchart LR
 
 1. retires: 프로듀서가 메시지 전송을 포기하고 에러를 발생시킬 때까지 메시지를 재전송하는 횟수를 의미
 
-2. retry.backoff.ms: 
+2. retry.backoff.ms: 프로듀서는 각각의 재시도 사이에 100ms 동안 대기하는데, 이 설정값으로 대기 시간을 조절할 수 있습니다.
+
+> 기본적으로 이 값을 건들이는 것을 추천하지는 않습니다.
+> `delivery.timeout.ms` 매개변수를 잡아 주는 것을 권장합니다.
+
+## 3.4.4 linger.ms
+현재 배치를 전송하기 전까지 대기하는 시간을 결정합니다.
+현재 배치가 가득 차거나 `linger.ms`에 설정된 제한 시간이 되었을 때 메시지 배치를 전송합니다.
+
+> 디폴트는 여유 스레드가 있을 때 바로 전송을 합니다.
+> 이 옵션을 사용하면, ms 만큼 더 기다리므로 지연을 조금 증가시키지만, 처리율을 크게 증가합니다.
+
+## 3.4.5 buffer.memory
+프로듀서가 메시지를 전송하기 전에 메시지를 대기시키는 버퍼의 크기를 결정합니다.
+
+> 애플리케이션이 서버에 전달 가능한 속도보다 더 빠르게 메시지를 전송한다면, 프로듀서 쪽에 조금씩 메모리가 쌓이니, 메모리가 가득찰 수 있습니다.
+
+## 3.4.6 Compression.type - 압축 타입
+메시지는 압축되지 않는 상태로 전송이 되지만,
+이 매개변수를 snappy, gzip, lz4, zstd 중 하나로 설정을 하면 메시지를 압축한 뒤 브로커로 전송합니다.
+
+- snappy: CPU 부하 적으면서, 압축 성능 좋음
+        - 압축 성능과 네트워크 대역폭 모두가 중요할 때
+
+- gzip: CPU와 시간을 더 많이 먹음. 압축률은 좋음
+        - 네트워크 대역폭이 제한적일 때
+
+
+## 3.4.7 batch.size
+각각의 매개변수는 각각의 배치에 사용될 메모리의 양을 결정합니다.
+
+배치가 차면 해당 배치에 들어 있는 모든 메시지가 한꺼번에 전송되지만, 찰 때까지 기다린다는 의미는 아닙니다.
+
+그렇기에, 매우 큰 값을 설정한다고 해서 메시지 지연이 발생하지는 않지만, 지나치게 작게 설정할 경우에는 자주 전송해야 하기에 약간의 오버헤드가 발생합니다.
+
+
+## 3.4.8 max.in.flight.requests.per.connection
+This setting basically controls how many requests can be made in parallel to any partition, and so, by default that setting is 5, which explains why you can have some reordering, but you have to set it to 1 if you want to strictly ensure ordering. 
+
+> requests들을 파티션에 병렬처리할 갯수.
+> 그렇기 때문에, reordering이 발생 할 수 있다.
+
+### 주의:
+retries 매개변수를 0보다 큰 값으로 설정한 상태에서 max.in.flight.requests.per.connection을 1이상으로 할 경우 순서가 바뀔 수 있습니다.
+
+> 그래서 가장 합당한 선택은 `enable.importence=true` 설정.
+
+## 3.4.9 max.request.size
+프로듀서가 전송하는 쓰기 요청의 크기를 결정합니다.
+> 쓰기 요청: batch하고 나서 보내는 사이즈.
+
+해당 설정으로 메시지의 최대 크기와 메시지의 최대 개수 역시 제한합니다.
+
+> 매개 변수의 기본값을 1MB로 설정을 한다면, 1KB 크기의 메시지를 1024개를 보낼 수 있다는 뜻.
+> 브로커에서 할 수 있는 설정에서는 `message.max.bytes` 설정이 있는데, 프로듀서와 브로커의 설정을 맞춰야 한다.
+
+## 3.4.10 receive.buffer.bytes, send.buffer.bytes
+TCP 송수신 버퍼의 크기 설정.
+값이 -1 일 경우에는 운영체제의 기본값을 사용합니다.
+
+프로듀서나 컨슈머가 다른 데에 위치한 브로커와 통신할 경우에는 네트워크 대역폭은 낮고 지연은 길어지므로 해당 값을 올려잡아 주는 것이 좋습니다.
+
+## 3.4.11 enable.idempotence
+- '정확히 한 번' 의미 구조를 지원합니다.
+
+1. acks=all, delivery.timeout.ms의 값을 꽤 큰 값으로 잡은 상황
+
+2. 첫 번째 브로커가 프로듀서로 응답을 보내기 전에 크래시가 났다고 한다면, 재 전송을 시도하게 된다.
+
+3. acks=all 설정과 재 전송으로 인해서 이미 메시지를 받은 바 있는 새 리더 브로커로 전달이 되게 되므로 메시지가 중복이 됩니다.
+
+> 그래서 탄생한 설정 = `enable.idempotence=true`
+> 프로듀서는 레코드를 보낼 때마다 순차적인 번호를 붙여서 보내게 되고, 브로커가 동일한 번호를 가진 레코드를 2개 이상 받을 경우 하나만 저장하게 됩니다.
+> 프로듀서는 별다른 문제를 발생시키지 않는 DuplicateSequenceException을 받게 됩니다.
+
