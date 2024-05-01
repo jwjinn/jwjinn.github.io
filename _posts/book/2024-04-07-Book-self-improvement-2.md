@@ -11,7 +11,6 @@ mermaid: true
 
 ---
 
-# 신경 끄기 연습
 ![](https://jwjinn.github.io/assets/img/book/2024-04-07-17-24-44.png)
 
 ## 책을 알게 된 계기
