@@ -165,7 +165,7 @@ public class producer3 {
 	public static void main(String[] args) {
 		 // Kafka 브로커에 연결할 설정 추가
         Properties configs = new Properties();
-        configs.put("bootstrap.servers", "61.33.35.156:17633"); // Kafka host 및 server 설정
+        configs.put("bootstrap.servers", "{외부IP}"); // Kafka host 및 server 설정
         configs.put("acks", "all");                         // 자신이 보낸 메시지에 대해 카프카로부터 확인을 기다리지 않습니다.
         configs.put("block.on.buffer.full", "true");        // 서버로 보낼 레코드를 버퍼링 할 때 사용할 수 있는 전체 메모리의 바이트수
         configs.put("spring.kafka.producer.properties.security.protocol", "PLAINTEXT"); 
@@ -321,7 +321,7 @@ public class asyncMessage {
 	public static void main(String[] args) {
 		 // Kafka 브로커에 연결할 설정 추가
         Properties configs = new Properties();
-        configs.put("bootstrap.servers", "61.33.35.156:17633"); // Kafka host 및 server 설정
+        configs.put("bootstrap.servers", "{외부IP}"); // Kafka host 및 server 설정
         configs.put("acks", "all");                         // 자신이 보낸 메시지에 대해 카프카로부터 확인을 기다리지 않습니다.
         configs.put("block.on.buffer.full", "true");        // 서버로 보낼 레코드를 버퍼링 할 때 사용할 수 있는 전체 메모리의 바이트수
         configs.put("spring.kafka.producer.properties.security.protocol", "PLAINTEXT"); 

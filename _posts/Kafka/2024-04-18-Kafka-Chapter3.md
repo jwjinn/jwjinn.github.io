@@ -115,7 +115,7 @@ java.net.UnknownHostException: nethru.xyz
 
 ```shell
 [2024-04-18 16:47:51,556] ERROR Exiting Kafka due to fatal exception (kafka.Kafka$)
-java.lang.IllegalArgumentException: Error creating broker listeners from 'PLAINTEXT://:17631,EXTERNAL://61.33.35.131:17631': No security protocol defined for listener EXTERNAL
+java.lang.IllegalArgumentException: Error creating broker listeners from 'PLAINTEXT://:17631,EXTERNAL://{외부IP}': No security protocol defined for listener EXTERNAL
         at kafka.utils.CoreUtils$.listenerListToEndPoints(CoreUtils.scala:243)
         at kafka.server.KafkaConfig.listeners(KafkaConfig.scala:2177)
         at kafka.server.KafkaConfig.<init>(KafkaConfig.scala:1845)
