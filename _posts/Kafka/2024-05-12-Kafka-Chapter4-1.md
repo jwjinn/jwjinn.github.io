@@ -3,7 +3,7 @@ title: 카프카 컨슈머의 개념
 description:
 author: joo
 date: 24-05-12
-categories: [Kafka, Chapter3]
+categories: [Kafka, Chapter4]
 tags: [kafka, Data, Engineering]
 pin: true
 math: true
