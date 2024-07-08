@@ -15,7 +15,7 @@ mermaid: true
 - SQL 전문가 가이도: 2020년 개정판
 
 ## 참고하는 GPT
-![](2024-07-08-09-51-50.png)
+![](https://jwjinn.github.io/assets/img/Sqlp/2024-07-08-09-51-50.png)
 
 ### 구성내용
 
