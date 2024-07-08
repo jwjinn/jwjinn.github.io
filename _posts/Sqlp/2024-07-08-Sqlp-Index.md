@@ -3,7 +3,7 @@ title: SQLP 공부시작과 배경
 description: SQLP 현재 무슨 책으로 공부를 시작하고 어떻게 하는 지, 블로그의 난이도는?
 author: joo
 date: 24-07-08
-categories: [SQLP, Index]
+categories: [SQLP]
 tags: [SQLP]
 pin: true
 math: true
