@@ -13,6 +13,7 @@ mermaid: true
 
 ## 현재 참고하는 책:
 - SQL 전문가 가이도: 2020년 개정판
+- SQLD 수제비: 2022년도
 
 ## 참고하는 GPT
 ![](https://jwjinn.github.io/assets/img/Sqlp/2024-07-08-09-51-50.png)
