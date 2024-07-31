@@ -28,21 +28,11 @@
     "@commitlint/config-conventional": "^19.2.2",
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-terser": "^0.4.4",
-<<<<<<< HEAD
-    "husky": "^9.0.11",
-    "rimraf": "^5.0.8",
-    "rollup": "^4.18.0",
-<<<<<<< HEAD
-    "rollup-plugin-license": "^3.5.2",
->>>>>>> ca4db45512ad1642b18c4601ae95e36144e695c5
-    "stylelint": "^16.6.1",
-=======
     "husky": "^9.1.1",
     "rimraf": "^6.0.1",
     "rollup": "^4.19.0",
     "rollup-plugin-license": "^3.5.2",
     "stylelint": "^16.7.0",
->>>>>>> fc6af1ca38c22d2c1bc8503543644d4f94191d0d
     "stylelint-config-standard-scss": "^13.1.0"
   },
   "prettier": {
