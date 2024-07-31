@@ -31,7 +31,11 @@
     "husky": "^9.0.11",
     "rimraf": "^5.0.8",
     "rollup": "^4.18.0",
+<<<<<<< HEAD
     "rollup-plugin-license": "^3.5.2",
+=======
+    "rollup-plugin-license": "^3.5.1",
+>>>>>>> ca4db45512ad1642b18c4601ae95e36144e695c5
     "stylelint": "^16.6.1",
     "stylelint-config-standard-scss": "^13.1.0"
   },
