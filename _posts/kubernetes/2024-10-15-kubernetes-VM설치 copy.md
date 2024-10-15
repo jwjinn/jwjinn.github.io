@@ -1,5 +1,5 @@
 ---
-title: VM 설치
+title: 1. VM 설치
 description: 
 date: 24-10-15
 categories: [kubernetes, 1.VM 설치와 설정]
