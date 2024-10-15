@@ -1,8 +1,8 @@
 ---
-title: 도구 설치하기
+title: 도구 설치하기(보류)
 description: 
 date: 24-10-11
-categories: [kubernetes, 태스크]
+categories: [kubernetes]
 tags: [kubernetes, vagrant]
 pin: true
 math: true
