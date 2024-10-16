@@ -2,7 +2,7 @@
 title: 2. VM 복제와 네트워크 설정
 description: 
 date: 24-10-15
-categories: [kubernetes, 1.VM 설치와 설정]
+categories: [kubernetes, 1.VM과 쿠버네티스 설치와 설정]
 tags: [kubernetes]
 pin: true
 math: true

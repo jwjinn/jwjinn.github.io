@@ -2,7 +2,7 @@
 title: 3. 쿠버네티스 설치를 위한 기본 커널 설정
 description: 
 date: 24-10-16
-categories: [kubernetes, 1.VM 설치와 설정]
+categories: [kubernetes, 1.VM과 쿠버네티스 설치와 설정]
 tags: [kubernetes]
 pin: true
 math: true
@@ -15,9 +15,7 @@ mermaid: true
 
 # 목표:
 
-1. 각각의 VM에 쿠버네티스 설치
-
-2. 각각의 쿠버네티스를 네트워크를 통해서 연결하자.
+- 쿠버네티스 커널 설정을 완료한다.
 
 ***
 
