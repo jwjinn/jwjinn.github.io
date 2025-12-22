@@ -1,0 +1,48 @@
+{
+	"nodes":[
+		{
+			"id":"fbe89a172f90db58",
+			"type":"text",
+			"text":"OpenTelemetry는 단순 매트릭 수집인가?",
+			"styleAttributes":{},
+			"x":-480,
+			"y":-140,
+			"width":340,
+			"height":60
+		},
+		{
+			"id":"07a02eba27091dab",
+			"type":"text",
+			"text":"분산 트레이싱",
+			"styleAttributes":{},
+			"x":20,
+			"y":-500,
+			"width":160,
+			"height":60
+		}
+	],
+	"edges":[
+		{
+			"id":"b24056b709eb8ea6",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"fbe89a172f90db58",
+			"fromSide":"right",
+			"toNode":"07a02eba27091dab",
+			"toSide":"left"
+		},
+		{
+			"id":"73adf94f02c3dc51",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"07a02eba27091dab",
+			"fromSide":"right",
+			"toNode":"adb2b0eb5727984d",
+			"toSide":"left"
+		}
+	],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

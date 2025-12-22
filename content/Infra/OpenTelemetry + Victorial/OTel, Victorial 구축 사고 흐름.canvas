@@ -145,54 +145,54 @@
 			"height":120
 		},
 		{
-			"id":"65030c976ea09405",
-			"type":"text",
-			"text":"메타데이터 보강",
-			"styleAttributes":{},
-			"x":220,
-			"y":520,
-			"width":260,
-			"height":60
-		},
-		{
 			"id":"7a06fc9c93a2cc89",
 			"type":"text",
-			"text":"데이터 마스킹",
+			"text":"데이터 마스킹\n- https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/processor/transformprocessor",
 			"styleAttributes":{},
 			"x":220,
 			"y":760,
-			"width":260,
-			"height":60
+			"width":460,
+			"height":140
 		},
 		{
 			"id":"158f129388f33a86",
 			"type":"text",
-			"text":"필터링",
+			"text":"필터링\n- https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/processor/filterprocessor",
 			"styleAttributes":{},
 			"x":220,
 			"y":1020,
-			"width":260,
-			"height":60
+			"width":460,
+			"height":120
 		},
 		{
 			"id":"c41eb7a1457ac904",
 			"type":"text",
-			"text":"샘플링",
+			"text":"샘플링\n- https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/processor/probabilisticsamplerprocessor",
 			"styleAttributes":{},
 			"x":220,
 			"y":1280,
-			"width":260,
-			"height":60
+			"width":460,
+			"height":140
 		},
 		{
 			"id":"4f48d2ee749a787a",
 			"type":"text",
-			"text":"배치 처리",
+			"text":"배치 처리\n- https://github.com/open-telemetry/opentelemetry-collector/tree/main/processor/batchprocessor",
 			"styleAttributes":{},
 			"x":220,
 			"y":1540,
-			"width":260,
-			"height":60
+			"width":460,
+			"height":120
+		},
+		{
+			"id":"65030c976ea09405",
+			"type":"text",
+			"text":"메타데이터 보강\n- https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/processor/k8sattributesprocessor",
+			"styleAttributes":{},
+			"x":220,
+			"y":520,
+			"width":460,
+			"height":160
 		}
 	],
 	"edges":[
