@@ -13,12 +13,74 @@
 		{
 			"id":"07a02eba27091dab",
 			"type":"text",
-			"text":"분산 트레이싱",
+			"text":"트레이싱 기능",
 			"styleAttributes":{},
 			"x":20,
 			"y":-500,
 			"width":160,
 			"height":60
+		},
+		{"id":"6f2cddeaacac5998","type":"file","file":"Infra/OpenTelemetry + Victorial/OpenTelemetry/Usecase/분산 트레이싱/분산 트레이싱 흐름도.canvas","portal":false,"x":520,"y":-1360,"width":895,"height":640},
+		{
+			"id":"f2bc494e7e38ad01",
+			"type":"text",
+			"text":"## 여러 서비스간 병목 확인 가능.\n- OTel은 이 요청에 `Trace ID`를 발급하고, 요청이 거쳐 간 모든 서비스(API 게이트웨이 → 인증 서버 → 결제 서버 → DB)의 구간별 소요 시간(Span)을 시각화\n- 전체 5초 중 인증 서버에서 DB를 조회하는 쿼리가 인덱스를 안 타서 4.8초가 걸렸다\"는 것을 바로 찾아냅니다. (이것이 OTel의 가장 강력한 킬러 기능입니다.)",
+			"styleAttributes":{},
+			"x":360,
+			"y":-660,
+			"width":1055,
+			"height":190
+		},
+		{
+			"id":"1d58d56cb1b71b26",
+			"type":"text",
+			"text":"로그와 트레이싱의 연결",
+			"styleAttributes":{},
+			"x":20,
+			"y":-140,
+			"width":300,
+			"height":60
+		},
+		{
+			"id":"c5f3508579d26d75",
+			"type":"text",
+			"text":"벤더 종속성 탈피",
+			"styleAttributes":{},
+			"x":0,
+			"y":160,
+			"width":320,
+			"height":60
+		},
+		{
+			"id":"6b6bd5473a27ab38",
+			"type":"text",
+			"text":"LLM, AI 파이프라인 관측",
+			"styleAttributes":{},
+			"x":0,
+			"y":440,
+			"width":320,
+			"height":60
+		},
+		{
+			"id":"1ae1f21d736831a3",
+			"type":"text",
+			"text":"쿠버네티스 상태 모니터링",
+			"styleAttributes":{},
+			"x":0,
+			"y":660,
+			"width":320,
+			"height":60
+		},
+		{
+			"id":"c50fb235a64d9d30",
+			"type":"text",
+			"text":"## 기존\n",
+			"styleAttributes":{},
+			"x":620,
+			"y":-360,
+			"width":700,
+			"height":180,
+			"color":"1"
 		}
 	],
 	"edges":[
@@ -32,12 +94,57 @@
 			"toSide":"left"
 		},
 		{
-			"id":"73adf94f02c3dc51",
+			"id":"72b28a08bc7b9f4f",
 			"styleAttributes":{},
 			"toFloating":false,
 			"fromNode":"07a02eba27091dab",
 			"fromSide":"right",
-			"toNode":"adb2b0eb5727984d",
+			"toNode":"6f2cddeaacac5998",
+			"toSide":"left"
+		},
+		{
+			"id":"8f573756fd6e44a1",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"fbe89a172f90db58",
+			"fromSide":"right",
+			"toNode":"1d58d56cb1b71b26",
+			"toSide":"left"
+		},
+		{
+			"id":"f7245c24013b96dd",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"fbe89a172f90db58",
+			"fromSide":"right",
+			"toNode":"c5f3508579d26d75",
+			"toSide":"left"
+		},
+		{
+			"id":"c91eb9f319d0017f",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"fbe89a172f90db58",
+			"fromSide":"right",
+			"toNode":"6b6bd5473a27ab38",
+			"toSide":"left"
+		},
+		{
+			"id":"60ba98a3f66de122",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"fbe89a172f90db58",
+			"fromSide":"right",
+			"toNode":"1ae1f21d736831a3",
+			"toSide":"left"
+		},
+		{
+			"id":"228ded99c9362b8c",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"1d58d56cb1b71b26",
+			"fromSide":"right",
+			"toNode":"c50fb235a64d9d30",
 			"toSide":"left"
 		}
 	],

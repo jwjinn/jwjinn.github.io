@@ -1,58 +1,20 @@
-```javascript
+**OTel Web SDK**가 동작합니다. 여기서 최초의 ID들이 생성됩니다.
 
-// src/index.js
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-
-// --- OpenTelemetry 설정 (실무용) ---
-import { WebTracerProvider } from '@opentelemetry/sdk-trace-web';
-import { FetchInstrumentation } from '@opentelemetry/instrumentation-fetch';
-import { registerInstrumentations } from '@opentelemetry/instrumentation';
-import { ZoneContextManager } from '@opentelemetry/context-zone';
-import { BatchSpanProcessor } from '@opentelemetry/sdk-trace-base';
-// ★ 변경됨: 콘솔 대신 HTTP 전송 모듈 사용
-import { OTLPTraceExporter } from '@opentelemetry/exporter-trace-otlp-http';
-
-// 1. 프로바이더 생성
-const provider = new WebTracerProvider();
-
-// 2. [실무용] Exporter 설정: 지정된 수집 서버 URL로 데이터 전송
-provider.addSpanProcessor(new BatchSpanProcessor(
-  new OTLPTraceExporter({
-    // ★ 여기에 실제 수집 서버 주소를 넣으세요 (예: Jaeger, OTel Collector 등)
-    url: 'http://collector.myshop.com:4318/v1/traces', 
-  })
-));
-
-// 3. 컨텍스트 매니저 등록 (필수)
-provider.register({
-  contextManager: new ZoneContextManager(),
-});
-
-// 4. Fetch 감지기 등록
-registerInstrumentations({
-  instrumentations: [
-    new FetchInstrumentation({
-      // ★ 중요: 여전히 백엔드 API 요청 시 헤더에 Trace ID를 붙여야 함
-      propagateTraceHeaderCorsUrls: [
-        /myshop\.com\/api/ 
-      ],
-    }),
-  ],
-});
-// --- 설정 끝 ---
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-    <App />
-);
-
-```
-
+- **Action:** `POST /api/order` 요청 생성
+- **Generated Context:**
+    
+    - **Trace ID:** `4bf92f3577b34da6a3ce929d0e0e4736` (전체 트랜잭션을 관통하는 불변의 고유 ID)
+        
+    - **Span ID (Span A):** `00f067aa0ba902b7` (React에서 발생한 '클릭' 이벤트 자체의 ID)
+        
+    - **Parent Span ID:** `null` (이것이 뿌리(Root)이기 때문)
+        
+    - **Trace Flags:** `01` (Sampled: 기록하기로 결정함)
+        
+- **Service Name:** `frontend-react`
 ***
-## 서비스 네임이 있는 버전
-```javascript
+## Service Name:
+```javscript
 
 // src/index.js
 import React from 'react';
@@ -107,4 +69,3 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App />);
 
 ```
-
