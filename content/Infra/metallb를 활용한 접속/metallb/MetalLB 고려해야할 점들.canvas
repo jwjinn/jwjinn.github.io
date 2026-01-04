@@ -1,0 +1,129 @@
+{
+	"nodes":[
+		{"id":"5b5885db4b9a2ae1","type":"file","file":"Infra/metallb를 활용한 접속/metallb/MetalLB 다이어그램.md","x":-680,"y":-560,"width":1800,"height":900},
+		{
+			"id":"342ffc7ec2b66268",
+			"type":"text",
+			"text":"MetalLB에서 허용되는 아이피",
+			"styleAttributes":{},
+			"x":-540,
+			"y":840,
+			"width":260,
+			"height":60
+		},
+		{
+			"id":"ce1d3a584a12eb12",
+			"type":"text",
+			"text":"노드들이 사용하고 있는 IP로만 사용이 가능하다.",
+			"styleAttributes":{},
+			"x":-620,
+			"y":1080,
+			"width":420,
+			"height":60
+		},
+		{"id":"db16644117b43896","type":"file","file":"Infra/metallb를 활용한 접속/metallb/describe/metalLB-kubectl nodes.md","x":-1880,"y":1520,"width":1380,"height":720},
+		{"id":"85521fd8b20dcba3","type":"file","file":"Infra/metallb를 활용한 접속/metallb/describe/metalLB 설치 example.md","x":-200,"y":1520,"width":760,"height":580},
+		{
+			"id":"fd55483164c330b8",
+			"type":"text",
+			"text":"생각해봐야 할 점들",
+			"styleAttributes":{},
+			"x":-680,
+			"y":600,
+			"width":1800,
+			"height":80
+		},
+		{
+			"id":"1403963b87ce7948",
+			"type":"text",
+			"text":"## 노드 조인과 다른점\n\n- internal-ip: 해당 ip들은 라우터나 스위치들이 DHCP를 통해서 IP를 자동으로 할당이 된 ip이다.\n- calico subnet ip들은 pod의 ip들을 위해서이다.\n\n\n",
+			"styleAttributes":{},
+			"x":-1570,
+			"y":2440,
+			"width":760,
+			"height":180
+		},
+		{
+			"id":"ad3e3312c0279c3a",
+			"type":"text",
+			"text":"## 주의해야할 점 DHCP 영역을 스위치 단에서 확실히 구분:\n\n- **DHCP 할당 범위:** `192.168.120.2` ~ `192.168.120.100` (PC, 핸드폰용)\n- **MetalLB용 범위:** `192.168.120.150` ~ `192.168.120.200` (서버 수동 할당용)",
+			"styleAttributes":{},
+			"x":320,
+			"y":810,
+			"width":800,
+			"height":120
+		}
+	],
+	"edges":[
+		{
+			"id":"702859969d6e8aee",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"5b5885db4b9a2ae1",
+			"fromSide":"bottom",
+			"toNode":"fd55483164c330b8",
+			"toSide":"top"
+		},
+		{
+			"id":"cf082c67b7c4bf53",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"fd55483164c330b8",
+			"fromSide":"bottom",
+			"toNode":"342ffc7ec2b66268",
+			"toSide":"top"
+		},
+		{
+			"id":"c9c7410cbabc1f7d",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"342ffc7ec2b66268",
+			"fromSide":"bottom",
+			"toNode":"ce1d3a584a12eb12",
+			"toSide":"top"
+		},
+		{
+			"id":"be05865b66c83833",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"ce1d3a584a12eb12",
+			"fromSide":"bottom",
+			"toNode":"db16644117b43896",
+			"toSide":"top",
+			"label":"subnet: 192.168.120.x\n\n이외의 ip로는 안된다."
+		},
+		{
+			"id":"bcd54618f92fdbfd",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"ce1d3a584a12eb12",
+			"fromSide":"bottom",
+			"toNode":"85521fd8b20dcba3",
+			"toSide":"top",
+			"label":"그래서 비어있는 IP를 할당해야 한다."
+		},
+		{
+			"id":"9bd4e78f994ceb4f",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"db16644117b43896",
+			"fromSide":"bottom",
+			"toNode":"1403963b87ce7948",
+			"toSide":"top"
+		},
+		{
+			"id":"1df471dd86048f7b",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"fd55483164c330b8",
+			"fromSide":"bottom",
+			"toNode":"ad3e3312c0279c3a",
+			"toSide":"top"
+		}
+	],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}
